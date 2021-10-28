@@ -1,0 +1,320 @@
+:root{
+    --body-color: #0D1117;
+    --blue-color: #3E8DB1;
+    --piano-line-color: #1C222B;
+    --piano-line-border-color: #28303A;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: var(--body-color);
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.game-introduction{
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(13, 17, 23, .95);
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+}
+
+.game-introduction .group{
+    width: 650px;
+    min-height: 280px;
+    padding: 2rem;
+    background-color: var(--body-color);
+    border: 2px solid var(--blue-color);
+    border-radius: 5px;
+}
+
+.game-introduction .group .logo img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.game-introduction .group .introduction{
+    color: white;
+    margin: 2rem 0;
+}
+
+.game-introduction .group .introduction h6{
+    font-weight: 700;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .6rem;
+}
+
+.countdown{
+    display: none;
+    place-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    font-weight: 800;
+    font-size: 5rem;
+    color: white;
+}
+
+.countdown .countdown-value{
+    display: block;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    background-color: rgba(40, 48, 58, .9);
+}
+
+.game-introduction .group .introduction ol{
+    font-weight: 500;
+    display: block;
+    line-height: 25px;
+    margin-left: 13px;
+}
+
+.game-introduction .group .button-play{
+    width: 100%;
+}
+
+.input-group{
+    width: 100%;
+    display: block;
+}
+
+.input-group label{
+    color: white;
+    font-weight: 700;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .6rem;
+}
+
+.input-select{
+    padding: .9rem 1rem;
+    background-color: var(--body-color);
+    border: 2px solid var(--blue-color);
+    color: white;
+    font-weight: 700;
+    outline: var(--blue-color);
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: .8rem;
+}
+
+.button{
+    padding: .9rem 1rem;
+    background-color: var(--blue-color);
+    font-weight: 700;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.button-red{
+    background-color: red;
+}
+
+.pause{
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(13, 17, 23, .95);
+    z-index: 9999;
+    display: none;
+    place-content: center;
+}
+
+.pause .pause-popup{
+    width: 650px;
+    min-height: 200px;
+    padding: 2rem;
+    background-color: var(--body-color);
+    border: 2px solid var(--blue-color);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.pause .pause-popup h6{
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.main{
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--blue-color);
+    width: 960px;
+    height: 700px;
+    background-color: #0F141B;
+    color: white;
+    position: relative;
+    display: grid;
+    justify-items: center;
+}
+
+.status{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+}
+
+.status .time {
+    display: block;
+}
+
+.status .time .time-value{
+    font-weight: 700;
+}
+
+.status .score .score-value{
+    font-weight: 700;
+}
+
+.menus{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100%;
+    min-width: 240px;
+    font-size: 1rem;
+    padding: 2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    display: block;
+    width: max-content;
+    background-color: var(--body-color);
+}
+
+.menus ul{
+    width: 100%;
+    display: block;
+    list-style: none;
+    line-height: 30px;
+}
+
+.menus ul li{
+    width: 100%;
+    display: block;
+}
+
+.menus ul li a{
+    display: block;
+    width: 100%;
+    transition: transform .3s ease;
+}
+
+.menus ul li:hover a, .menus ul li a:focus{
+    transform: translateX(10px);
+    color: var(--blue-color);
+}
+
+.main-board-piano{
+    position: relative;
+    width: 352px;
+    height: 100%;
+}
+
+.main-board-piano .lines-group{
+    width: 100%;
+    height: 100%;
+    background-color: var(--piano-line-color);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-board-piano .border-piano {
+    position: absolute;
+    bottom: 115px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(146, 154, 166, .5);
+    height: 12px;
+    border: 2px solid #E0E0E0;
+}
+
+.main-board-piano .line-group{
+    position: relative;
+    background-color: var(--piano-line-color);
+    border: 2px solid var(--piano-line-border-color);
+    display: grid;
+}
+
+.main-board-piano .line-group .topdrop{
+    display: none;
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to top, rgb(253, 253, 253, .4), rgba(13, 17, 23, .1));
+}
+
+.main-board-piano .line-group .key{
+    width: 100%;
+    align-self: flex-end;
+    line-height: 113px;
+    height: 113px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.hit-piano{
+    display: block;
+    background-color: var(--blue-color);
+    width: 100%;
+    height: 20px;
+    border: 1px solid #88d6fa;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    animation: hitPianoAnim 3s infinite linear;
+}
+
+@keyframes hitPianoAnim {
+    to{
+       transform: translateY(515px);
+    }
+}
+
+.main-board-piano .line-group .key:focus{
+    background-color: red !important;
+}
+
+.main-board-piano .line-group .key.key-odd{
+    background-color: var(--blue-color);
+}
+.main-board-piano .line-group .key.key-even{
+    background-color: #3E69BF;
+}

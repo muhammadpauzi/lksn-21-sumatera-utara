@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./sumut_game_icon.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <title>PioTile Game</title>
+</head>
+
+<body>
+    <!-- Game Introduction -->
+    <div class="game-introduction">
+        <div class="group">
+            <!-- Logo/Icon -->
+            <div class="logo">
+                <img src="./sumut_game_icon.png" alt="PioTile Icon">
+            </div>
+
+            <!-- Introduction -->
+            <div class="introduction">
+                <h6>Game Introductions :</h6>
+                <ol>
+                    <li>Choose song,</li>
+                    <li>Click button with text of "Play Now", and game screen is show,</li>
+                    <li>To click the keys, you can click with your keyboard,</li>
+                    <li>If your score is lower then 50.0% you failed.</li>
+                </ol>
+            </div>
+
+            <!-- Select for Choosing a Song -->
+            <div class="input-group">
+                <label for="song">Choose Song</label>
+                <select class="input-select" id="songSelect">
+                    <option value="1.unforgiving">Unforgiving</option>
+                </select>
+                <button class="button button-play" id="buttonPlay">Play Now</button>
+            </div>
+        </div>
+    </div>
+    <!-- End Game Introduction -->
+
+    <!-- Countdown -->
+    <div class="countdown">
+        <div class="countdown-value">3</div>
+    </div>
+    <!-- End Countdown -->
+
+    <!-- Pause Popup -->
+    <div class="pause">
+        <div class="pause-popup">
+            <h6>Pause</h6>
+            <button class="button" id="buttonContinue">Continue</button>
+            <button class="button button-red" id="buttonRestart">Restart</button>
+        </div>
+    </div>
+    <!-- End Pause Popup -->
+
+    <!-- Main Section -->
+    <main class="main">
+
+        <!-- Status of Game -->
+        <div class="status">
+            <span class="time">Time: <span class="time-value">00:00</span></span>
+            <span class="score">Score: <span class="score-value">0%</span></span>
+        </div>
+
+        <!-- Menus -->
+        <div class="menus">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="buttonChooseSong">Choose song</a></li>
+                <li><a href="#">Options</a></li>
+                <li><a href="#" id="buttonQuit">Quit/Restart</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Board Piano/Block Line -->
+        <div class="main-board-piano">
+            <div class="lines-group">
+                <div class="line-group line-group-1" data-line="1">
+                    <div class="topdrop"></div>
+                    <div class="key key-odd" data-key="KeyD">D</div>
+                </div>
+                <div class="line-group line-group-2" data-line="2">
+                    <div class="topdrop"></div>
+                    <div class="key key-even" data-key="KeyF">F</div>
+                </div>
+                <div class="line-group line-group-3" data-line="3">
+                    <div class="topdrop"></div>
+                    <div class="key key-odd" data-key="KeyJ">J</div>
+                </div>
+                <div class="line-group line-group-4" data-line="4">
+                    <div class="topdrop"></div>
+                    <div class="key key-even" data-key="KeyK">K</div>
+                </div>
+            </div>
+            <div class="border-piano"></div>
+        </div>
+    </main>
+    <!-- End Main Section -->
+
+    <!-- Javascript -->
+    <script src="./app.js"></script>
+</body>
+
+</html>

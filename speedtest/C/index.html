@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 5rem auto;
+        }
+
+        #canvas {
+            width: 460px;
+            height: 320px;
+            background-color: green;
+        }
+
+        #img {
+            width: 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./images/athena.jpg" alt="" id="img" style="display: none;">
+    <div class="container">
+        <canvas id="canvas"></canvas>
+        <div>
+            <label for="image">Image : </label>
+            <select id="image">
+                <option value="athena.jpg">athena.jpg</option>
+                <option value="mona-lisa.jpg">mona-lisa.jpg</option>
+                <option value="theKiss.jpg">theKiss.jpg</option>
+                <option value="young-pearl.jpg">young-pearl.jpg</option>
+            </select>
+            <label for="filter">Filter : </label>
+            <select id="filter">
+                <option value="Darken">Darken</option>
+                <option value="Lighten">Lighten</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

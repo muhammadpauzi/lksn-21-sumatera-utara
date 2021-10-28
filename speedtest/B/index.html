@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .switch {
+            display: none;
+        }
+
+        .switch-toggle {
+            position: relative;
+            display: block;
+            appearance: none;
+            width: 100px;
+            border-radius: 100px;
+            height: 50px;
+            background-color: rgb(33, 3, 117);
+            transition: .3s;
+        }
+
+        .switch-toggle::after {
+            position: absolute;
+            top: 15px;
+            background-color: rgb(105, 240, 222);
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: block;
+            transition: .3s;
+        }
+
+        .switch:checked+.switch-toggle {
+            background-color: rgb(105, 240, 222);
+        }
+
+        .switch:not(:checked)+.switch-toggle::after {
+            left: 15px;
+        }
+
+        .switch:checked+.switch-toggle::after {
+            right: 15px;
+            background-color: rgb(33, 3, 117);
+        }
+    </style>
+    <title>IOS' Switch Toggle</title>
+</head>
+
+<body>
+
+
+    <input type="checkbox" id="switch" class="switch">
+    <label for="switch" class="switch-toggle"></label>
+
+</body>
+
+</html>

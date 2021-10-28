@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://sumatera-utara-vaccinify.lksn-webtech-2021.zasdaym.my.id/api/v1'
